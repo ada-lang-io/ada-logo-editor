@@ -268,7 +268,7 @@ Here are some examples of customization of the Ada Horizon logo from the
   <col width="200em" />
   <tr>
     <td><img src="contrib/ada-inside/ada_inside_blue_circle_logo.svg"></td>
-    <td><img src="contrib/ARG/ada_ARG_logo_feather.svg"></td>
+    <td><img src="contrib/ARG/ada_ARG_logo_quill.svg"></td>
     <td><img src="contrib/ada-europe/ada_europe_logo_white_on_blue.svg"></td>
     <td><img src="contrib/ada-spain/ada_spain_sun.svg"></td>
     <td><img src="contrib/ARM/ada_RM_logo_alt.svg"></td>
