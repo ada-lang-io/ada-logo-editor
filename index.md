@@ -258,7 +258,7 @@ released under Creative Common Public Domain
 # Contributions
 
 Here are some examples of customization of the Ada Horizon logo from the
-[`contrib` folder](https://github.com/ada-lang-io/ada-logo-editor/contrib).
+[`contrib` folder](https://github.com/ada-lang-io/ada-logo-editor/tree/main/contrib).
 
 <table class="fixed">
   <col width="200em" />
