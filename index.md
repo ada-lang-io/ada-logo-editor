@@ -162,7 +162,7 @@ released under Creative Common Public Domain
      const color = sub_color.value;
 
      svg_subtext.innerHTML = subtextfont.getPath(text, 0, 0, 72).toSVG(0.1);
-     svg_subtext.setAttribute('transform', 'translate(' + x +', ' + y +') scale(' + scale + ') ');
+     svg_subtext.setAttribute('transform', `translate(${x},${y}) scale(${scale},-${scale})`);
      svg_subtext.setAttribute('fill', color)
      svg_logo.setAttribute('fill', color)
      if (sub_enable_frame.checked) {
