@@ -2,7 +2,7 @@
 layout: default
 ---
 
-<script src="https://cdn.jsdelivr.net/npm/opentype.js@latest/dist/opentype.min.js"></script>
+<script src="https://opentype.js.org/dist/opentype.js"></script>
 <link rel="stylesheet" href="https://www.w3schools.com/lib/w3.css">
 
 <div class="w3-row-padding">
@@ -143,14 +143,15 @@ released under Creative Common Public Domain
    btn_save_icon.addEventListener('click', save_to_icon);
 
    // Load the font using opentype
-   opentype.load('Aileron-Bold.otf', function(err, font) {
-     if (err) {
-         alert('Font could not be loaded: ' + err);
-     } else {
-       subtextfont = font;
-     }
-     update_logo();
-   });
+   try {
+   	const buffer = fetch('Aileron-Bold.otf').then(res => res.arrayBuffer());
+    	buffer.then(data => {
+     		subtextfont = opentype.parse(data);
+       	update_logo();
+     	})
+   } catch (err) {
+   	alert('Font could not be loaded: ' + err);
+   }
 
    // Update the SVG logo element based on current values of the settings 
    function update_logo() {
@@ -161,7 +162,7 @@ released under Creative Common Public Domain
      const color = sub_color.value;
 
      svg_subtext.innerHTML = subtextfont.getPath(text, 0, 0, 72).toSVG(0.1);
-     svg_subtext.setAttribute('transform', 'translate(' + x +', ' + y +') scale(' + scale + ') ');
+     svg_subtext.setAttribute('transform', `translate(${x},${y}) scale(${scale},-${scale})`);
      svg_subtext.setAttribute('fill', color)
      svg_logo.setAttribute('fill', color)
      if (sub_enable_frame.checked) {
@@ -273,4 +274,4 @@ Here are some examples of customization of the Ada Horizon logo from the
     <td><img src="contrib/ada-spain/ada_spain_sun.svg"></td>
     <td><img src="contrib/ARM/ada_RM_logo_alt.svg"></td>
   </tr>
-</table> 
+</table>
